@@ -1,0 +1,8 @@
+# cucumber.yml
+
+---
+<% common = "--require features/support --require features/step_definitions" %>
+
+default: <%= common %> -p heroku -p reports
+heroku: ENVIRONMENT=heroku
+reports: --color --format pretty --format html -o cucumber_results.html --format json -o reports.json
